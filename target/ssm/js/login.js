@@ -6,7 +6,7 @@ function check() {
             if(data!=""){
                 alert(data);
             }else {
-                window.location.href="index.jsp";
+                window.location.href="pages/index.jsp";
             }
         }
     })

@@ -1,0 +1,63 @@
+.not-active{
+    display: none;
+}
+
+.active{
+    display: block;
+}
+
+.li-active{
+    color: #00a6ff;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+a:focus{
+    text-decoration: none;
+}
+
+.content{
+    position: absolute;
+    left: 0;
+    width: 15%;
+    height: 100vh;
+}
+
+.content ul{
+    list-style-type:none;
+    padding-left: 20px;
+}
+
+.content li:hover{
+}
+
+.content .first-bar{
+    padding-top: 20px;
+}
+
+.first-bar a{
+    display:block;
+    color: #3d3b3b;
+}
+
+.main-bar-icon{
+    width: 30px;
+    height: 30px;
+}
+
+
+.second-bar a{
+    color: #716e6e;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+
+/*header的css样式修改i*/
+.header-dec{
+    background-color: #e7e4e4;
+}
+

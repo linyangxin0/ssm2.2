@@ -6,7 +6,16 @@ public class User {
     private int id;
     private String name;
     private String password;
+    private int status;
     private List<Role> roleList;
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
     public List<Role> getRoleList() {
         return roleList;

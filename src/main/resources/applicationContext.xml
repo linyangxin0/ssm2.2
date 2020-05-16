@@ -18,13 +18,19 @@
 <!--    配置连接池-->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/user_manager?useUnicode=true&amp;characterEncoding=utf8"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/project2?useUnicode=true&amp;characterEncoding=utf8"/>
         <property name="username" value="root"/>
         <property name="password" value="123456"/>
     </bean>
 
+    <!--    驼峰命名的开启-->
+    <bean id="settings" class="org.apache.ibatis.session.Configuration">
+        <property name="mapUnderscoreToCamelCase" value="true"></property>
+    </bean>
+
 <!--    配置SqlSessionFactory工厂-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configuration" ref="settings"></property>
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
@@ -49,5 +55,6 @@
     <aop:config>
         <aop:advisor advice-ref="txAdvice" pointcut="execution(* cn.itcast.service.impl.*ServiceImpl.*(..))"/>
     </aop:config>
+
 
 </beans>

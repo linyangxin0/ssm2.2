@@ -1,5 +1,7 @@
 package cn.itcast.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 import java.util.List;
 
@@ -8,6 +10,7 @@ public class Song {
     private String name;
     private String info;
     private String author;
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updateTime;
     private int status;
 
