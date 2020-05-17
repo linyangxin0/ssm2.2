@@ -24,4 +24,7 @@ public interface SongDao {
 
     @Select("select * from song where name like CONCAT('%',#{searchText},'%')")
     List<Song> findSongByName(String searchText);
+
+    @Select("select * from song where id=#{id}")
+    Song findSongById(Integer id);
 }

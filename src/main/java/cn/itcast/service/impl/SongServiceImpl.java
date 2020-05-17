@@ -44,4 +44,15 @@ public class SongServiceImpl implements ISongService {
         return songDao.findSongByName(searchText);
     }
 
+    @Override
+    public void delASong(Integer songId) {
+        songDao.delSong(songId);
+    }
+
+    @Override
+    public Song findSongById(Integer id) {
+        return songDao.findSongById(id);
+    }
+
+
 }

@@ -14,4 +14,9 @@ public interface ISongService {
     void editSong(Song song);
 
     List<Song> findSongByName(String searchText);
+
+    void delASong(Integer songId);
+
+
+    Song findSongById(Integer id);
 }
