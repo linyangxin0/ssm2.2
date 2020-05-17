@@ -60,7 +60,23 @@ public class SongController {
 
 
     @RequestMapping("/editSong.do")
-    public @ResponseBody void editSong(Song song){
+    public @ResponseBody void editSong(@RequestParam(value = "id",required = true) Integer id,
+                                       @RequestParam(value = "name",required = true) String name,
+                                       @RequestParam(value = "info",required = true)String info,
+                                       @RequestParam(value = "author",required = true)String author,
+                                       @RequestParam(value = "updateTime",required = true)String updateTime,
+                                       @RequestParam(value = "status",required = true)Integer status) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date time = sdf.parse(updateTime);
+        Song song = new Song();
+        song.setId(id);
+        song.setName(name);
+        song.setInfo(info);
+        song.setAuthor(author);
+        song.setUpdateTime(time);
+        song.setStatus(status);
+
+
         songService.editSong(song);
     }
 
