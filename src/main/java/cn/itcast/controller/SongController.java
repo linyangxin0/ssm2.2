@@ -4,6 +4,7 @@ import cn.itcast.domain.Song;
 import cn.itcast.service.ISongService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -24,9 +25,15 @@ public class SongController {
     }
 
     @RequestMapping("/saveSong.do")
-    public @ResponseBody void saveSong(Song song){
-        songService.saveSong(song);
-        System.out.println("chengg");
+    public @ResponseBody void saveSong(@RequestParam(value = "name",required = true) String name,
+                                       @RequestParam(value = "info",required = true)String info,
+                                       @RequestParam(value = "author",required = true)String author,
+                                       @RequestParam(value = "updateTime",required = true)String updateTime,
+                                       @RequestParam(value = "status",required = true)Integer status){
+//        System.out.println(song);
+//        songService.saveSong(song);
+//        System.out.println("chengg2");
+        System.out.println(name);
     }
 
     @RequestMapping("/delSong.do")
@@ -41,9 +48,9 @@ public class SongController {
     }
 
 
-    @RequestMapping("/search.do")
-    public @ResponseBody List<Song> search(String searchText){
-        return songService.search(searchText);
+    @RequestMapping("/findSongByName.do")
+    public @ResponseBody List<Song> findSongByName(String searchText){
+        return songService.findSongByName(searchText);
     }
 
 

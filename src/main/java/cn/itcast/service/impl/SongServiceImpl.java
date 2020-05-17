@@ -40,8 +40,8 @@ public class SongServiceImpl implements ISongService {
     }
 
     @Override
-    public List<Song> search(String searchText) {
-        return songDao.search(searchText);
+    public List<Song> findSongByName(String searchText) {
+        return songDao.findSongByName(searchText);
     }
 
 }

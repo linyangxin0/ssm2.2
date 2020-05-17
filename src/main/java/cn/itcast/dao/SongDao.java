@@ -23,5 +23,5 @@ public interface SongDao {
     void editSong(Song song);
 
     @Select("select * from song where name like CONCAT('%',#{searchText},'%')")
-    List<Song> search(String searchText);
+    List<Song> findSongByName(String searchText);
 }
