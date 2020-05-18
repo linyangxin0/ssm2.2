@@ -2,6 +2,7 @@ package cn.itcast.service.impl;
 
 import cn.itcast.dao.DeviceDao;
 import cn.itcast.domain.Device;
+import cn.itcast.domain.SongList;
 import cn.itcast.service.IDeviceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.objenesis.instantiator.annotations.Instantiator;
@@ -29,14 +30,47 @@ public class DeviceServiceImpl implements IDeviceService {
     }
 
     @Override
-    public void delDevice(List<Integer> deviceIds) {
-        for (int id: deviceIds){
-            deviceDao.delDevice(id);
-        }
+    public void delDevice(String deviceIds) {
+        deviceDao.delDevice(deviceIds);
     }
 
     @Override
     public void editDevice(Device device) {
         deviceDao.editDevice(device);
+    }
+
+    @Override
+    public List<Device> findDeviceByName(String searchText) {
+        return deviceDao.findDeviceByName(searchText);
+    }
+
+    @Override
+    public void addDevice(Device device) {
+        deviceDao.addDevice(device);
+    }
+
+    @Override
+    public Device findDeviceById(String id) {
+        return deviceDao.findDeviceById(id);
+    }
+
+    @Override
+    public List<SongList> findSongListNotIn(String id) {
+        return deviceDao.findSongListNotIn(id);
+    }
+
+    @Override
+    public void addSongList(int songListId, String deviceId) {
+        deviceDao.addSongList(songListId,deviceId);
+    }
+
+    @Override
+    public List<SongList> findSongListIn(String deviceId) {
+        return deviceDao.findSongListIn(deviceId);
+    }
+
+    @Override
+    public void cancelSongList(int songListId, String deviceId) {
+        deviceDao.cancelSongList(songListId,deviceId);
     }
 }
