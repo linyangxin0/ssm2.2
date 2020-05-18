@@ -27,4 +27,7 @@ public interface SongDao {
 
     @Select("select * from song where id=#{id}")
     Song findSongById(Integer id);
+
+    @Select("select * from song where id in (select id from song_songList where id=#{id})")
+    List<Song> findSongBySongListId(Integer id);
 }
