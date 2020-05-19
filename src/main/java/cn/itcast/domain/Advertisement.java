@@ -1,11 +1,14 @@
 package cn.itcast.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 import java.util.List;
 
 public class Advertisement {
     private int id;
     private String context;
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date getDate;
     private List<Device> device;
 
