@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -29,4 +32,19 @@ public class AdvertisementController {
         return advertisementService.findAdvertisementByName(searchText);
     }
 
+
+
+    @RequestMapping("/addAdvertisement.do")
+    public @ResponseBody void addAdvertisement(String context, String getDate) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date time = sdf.parse(getDate);
+        advertisementService.addAdvertisement(context,time);
+    }
+
+
+
+    @RequestMapping("/delAdvertisementById.do")
+    public @ResponseBody void delAdvertisementById(Integer id){
+        advertisementService.delAdvertisementById(id);
+    }
 }

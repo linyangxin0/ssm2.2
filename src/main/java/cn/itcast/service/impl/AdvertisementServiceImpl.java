@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -24,6 +25,16 @@ public class AdvertisementServiceImpl implements IAdvertisementService {
     @Override
     public List<Advertisement> findAdvertisementByName(String searchText) {
         return advertisementDao.findAdvertisementByName(searchText);
+    }
+
+    @Override
+    public void addAdvertisement(String context, Date getDate) {
+        advertisementDao.addAdvertisement(context,getDate);
+    }
+
+    @Override
+    public void delAdvertisementById(Integer id) {
+        advertisementDao.delAdvertisementById(id);
     }
 
 
