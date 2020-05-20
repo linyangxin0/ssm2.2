@@ -23,4 +23,7 @@ public interface IUserService {
     User findUserById(Integer id);
 
     void updateUser(Integer id, String name, Integer status);
+
+    User login(String username, String password);
+
 }

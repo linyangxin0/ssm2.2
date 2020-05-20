@@ -31,4 +31,7 @@ public interface UserDao {
 
     @Update("update user set name=#{name},status=#{status} where id=#{id}")
     void updateUser(@Param("id")Integer id,@Param("name")String name,@Param("status")Integer status);
+
+    @Select("select * from user where name=#{username} and password=#{password}")
+    User login(@Param("username")String username,@Param("password") String password);
 }

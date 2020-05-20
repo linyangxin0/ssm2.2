@@ -1,10 +1,8 @@
 package cn.itcast.controller;
 
-import cn.itcast.domain.Device;
-import cn.itcast.domain.Role;
-import cn.itcast.domain.Song;
-import cn.itcast.domain.User;
+import cn.itcast.domain.*;
 import cn.itcast.service.IUserService;
+import cn.itcast.utils.JwtUtils2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -73,6 +71,29 @@ public class UserController {
                                          @RequestParam(value="status") Integer status){
 
         userService.updateUser(id,name,status);
+    }
+
+
+    @RequestMapping("/login.do")
+    public @ResponseBody
+    ResponseData login(@RequestParam(value="username") String username,
+                       @RequestParam(value="password") String password){
+
+        ResponseData responseData = ResponseData.ok();
+        User user = userService.login(username,password);
+
+        if(user != null){
+
+            String token = JwtUtils2.sign((long) user.getId());
+            //封装成对象返回给客户端
+            responseData.putDataValue("userId", user.getId());
+            responseData.putDataValue("token", token);
+            responseData.putDataValue("user", user);
+        } else{
+            responseData =  ResponseData.customerError();
+        }
+
+        return responseData;
     }
 
 }
