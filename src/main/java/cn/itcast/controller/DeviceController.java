@@ -89,7 +89,7 @@ public class DeviceController {
     }
 
     @RequestMapping("/addSongList.do")
-    public @ResponseBody void addSongList(@RequestParam(value = "songListId",required = true) int songListId,
+    public @ResponseBody void addSongList(@RequestParam(value = "songListId",required = true) Integer songListId,
                                           @RequestParam(value = "deviceId",required = true)String deviceId){
         deviceService.addSongList(songListId,deviceId);
     }
@@ -100,7 +100,7 @@ public class DeviceController {
     }
 
     @RequestMapping("/cancelSongList.do")
-    public @ResponseBody void cancelSongList(@RequestParam(value = "songListId",required = true) int songListId,
+    public @ResponseBody void cancelSongList(@RequestParam(value = "songListId",required = true) Integer songListId,
                                           @RequestParam(value = "deviceId",required = true)String deviceId){
         deviceService.cancelSongList(songListId,deviceId);
     }
