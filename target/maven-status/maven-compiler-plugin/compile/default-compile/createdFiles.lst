@@ -14,10 +14,14 @@ cn\itcast\domain\SongList.class
 cn\itcast\service\impl\AdvertisementServiceImpl.class
 cn\itcast\dao\SongListDao.class
 cn\itcast\service\IDeviceService.class
-cn\itcast\domain\SystemLog.class
+cn\itcast\utils\testIsAdmin.class
+cn\itcast\domain\SysLog.class
+cn\itcast\dao\ISysLogDao.class
+cn\itcast\controller\LogAop.class
 cn\itcast\domain\Role.class
 cn\itcast\service\impl\SongListServiceImpl.class
 cn\itcast\dao\UserDao.class
+cn\itcast\controller\SysController.class
 cn\itcast\service\ISongListService.class
 cn\itcast\utils\DateStringEditor.class
 cn\itcast\service\IUserService.class
@@ -31,6 +35,8 @@ cn\itcast\dao\AdvertisementDao.class
 cn\itcast\controller\RoleController.class
 cn\itcast\dao\DeviceDao.class
 cn\itcast\service\IRoleService.class
+cn\itcast\service\ISysLogService.class
+cn\itcast\service\impl\SysLogServiceImpl.class
 cn\itcast\controller\SongController.class
 cn\itcast\domain\Song.class
 cn\itcast\utils\DateUtils.class

@@ -1,9 +1,13 @@
+D:\ideaproject\ssm2.2\src\main\java\cn\itcast\controller\SysController.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\service\IDeviceService.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\service\impl\UserServiceImpl.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\controller\AdvertisementController.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\controller\RoleController.java
+D:\ideaproject\ssm2.2\src\main\java\cn\itcast\controller\LogAop.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\domain\User.java
+D:\ideaproject\ssm2.2\src\main\java\cn\itcast\utils\testIsAdmin.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\dao\RoleDao.java
+D:\ideaproject\ssm2.2\src\main\java\cn\itcast\domain\SysLog.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\service\ISongService.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\utils\TokenInterceptor.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\service\ISongListService.java
@@ -16,7 +20,7 @@ D:\ideaproject\ssm2.2\src\main\java\cn\itcast\service\IRoleService.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\controller\DeviceController.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\dao\DeviceDao.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\service\impl\RoleServiceImpl.java
-D:\ideaproject\ssm2.2\src\main\java\cn\itcast\domain\SystemLog.java
+D:\ideaproject\ssm2.2\src\main\java\cn\itcast\service\ISysLogService.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\service\impl\DeviceServiceImpl.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\domain\Role.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\utils\JwtUtils2.java
@@ -28,10 +32,12 @@ D:\ideaproject\ssm2.2\src\main\java\cn\itcast\service\IUserService.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\dao\AdvertisementDao.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\utils\DateUtils.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\utils\BCryptPasswordEncoderUtils.java
+D:\ideaproject\ssm2.2\src\main\java\cn\itcast\dao\ISysLogDao.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\domain\SongList.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\dao\SongListDao.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\domain\Advertisement.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\service\impl\SongListServiceImpl.java
+D:\ideaproject\ssm2.2\src\main\java\cn\itcast\service\impl\SysLogServiceImpl.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\dao\UserDao.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\domain\Device.java
 D:\ideaproject\ssm2.2\src\main\java\cn\itcast\dao\SongDao.java

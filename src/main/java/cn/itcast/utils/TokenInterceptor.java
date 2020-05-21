@@ -30,7 +30,6 @@ public class TokenInterceptor implements HandlerInterceptor {
         //token不存在
         if (null != token) {
             Long user = JwtUtils2.verify(token);
-//            String userId = request.getParameter("userId");
             String userId = request.getHeader("userId");
             //解密token后的loginId与用户传来的loginId不一致，一般都是token过期
             if (null != userId && null != user) {
