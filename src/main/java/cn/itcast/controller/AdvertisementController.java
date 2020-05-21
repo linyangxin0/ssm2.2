@@ -82,4 +82,16 @@ public class AdvertisementController {
 
         advertisementService.editAdvertisement(advertisement);
     }
+
+    @RequestMapping("/findDeviceInById.do")
+    public @ResponseBody List<Device> findDeviceInById(Integer id){
+        return advertisementService.findDeviceInById(id);
+    }
+
+
+    @RequestMapping("/delAdvertisementFromDevice.do")
+    public @ResponseBody void delAdvertisementFromDevice(Integer advertisementId, String deviceId){
+        advertisementService.delAdvertisementFromDevice(advertisementId,deviceId);
+    }
+
 }

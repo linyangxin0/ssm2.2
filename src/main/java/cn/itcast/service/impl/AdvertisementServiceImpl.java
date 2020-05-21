@@ -58,5 +58,15 @@ public class AdvertisementServiceImpl implements IAdvertisementService {
         advertisementDao.editAdvertisement(advertisement);
     }
 
+    @Override
+    public List<Device> findDeviceInById(Integer id) {
+        return advertisementDao.findDeviceInById(id);
+    }
+
+    @Override
+    public void delAdvertisementFromDevice(Integer advertisementId, String deviceId) {
+        advertisementDao.delAdvertisementFromDevice(advertisementId,deviceId);
+    }
+
 
 }

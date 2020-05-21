@@ -33,4 +33,10 @@ public interface AdvertisementDao {
 
     @Update("update advertisement set context=#{context},get_date=#{getDate} where id=#{id}")
     void editAdvertisement(Advertisement advertisement);
+
+    @Select("select * from device where id in (select device_id from device_advertisement where advertisement_id=#{id})")
+    List<Device> findDeviceInById(Integer id);
+
+    @Delete("delete from device_advertisement where advertisement_id=#{advertisementId} and device_id=#{deviceId}")
+    void delAdvertisementFromDevice(@Param("advertisementId")Integer advertisementId,@Param("deviceId") String deviceId);
 }

@@ -25,4 +25,8 @@ public interface IAdvertisementService {
     Advertisement findAdvertisementById(Integer advertisementId);
 
     void editAdvertisement(Advertisement advertisement);
+
+    List<Device> findDeviceInById(Integer id);
+
+    void delAdvertisementFromDevice(Integer advertisementId, String deviceId);
 }
