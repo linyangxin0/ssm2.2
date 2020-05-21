@@ -18,4 +18,8 @@ public interface RoleDao {
 
     @Delete("delete from user_role where user_id=#{userId} and role_id=#{roleId}")
     void delUserFromRole(@Param("userId") Integer userId,@Param("roleId") Integer roleId);
+
+    @Select("select * from role where id in (select role_id from user_role where user_id=#{userId})")
+    List<Role> findRoleByUserId(Integer userId);
+
 }

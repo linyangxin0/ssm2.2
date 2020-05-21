@@ -3,6 +3,8 @@ package cn.itcast.controller;
 import cn.itcast.domain.*;
 import cn.itcast.service.IUserService;
 import cn.itcast.utils.JwtUtils2;
+import cn.itcast.utils.testIsAdmin;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -82,6 +84,8 @@ public class UserController {
         ResponseData responseData = ResponseData.ok();
         User user = userService.login(username,password);
 
+        Boolean isAdmin = testIsAdmin.isAdmin(user);
+
         if(user != null){
 
             String token = JwtUtils2.sign((long) user.getId());
@@ -89,6 +93,7 @@ public class UserController {
             responseData.putDataValue("userId", user.getId());
             responseData.putDataValue("token", token);
             responseData.putDataValue("user", user);
+            responseData.putDataValue("isAdmin", isAdmin);
         } else{
             responseData =  ResponseData.customerError();
         }

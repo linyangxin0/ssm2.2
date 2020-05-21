@@ -33,5 +33,12 @@ public interface UserDao {
     void updateUser(@Param("id")Integer id,@Param("name")String name,@Param("status")Integer status);
 
     @Select("select * from user where name=#{username} and password=#{password}")
+    @Results({
+            @Result(id = true,property = "id",column = "id"),
+            @Result(property = "name",column = "name"),
+            @Result(property = "password",column = "password"),
+            @Result(property = "status",column = "status"),
+            @Result(property = "roleList",column = "id",javaType = java.util.List.class,many = @Many(select = "cn.itcast.dao.RoleDao.findRoleByUserId")),
+    })
     User login(@Param("username")String username,@Param("password") String password);
 }
