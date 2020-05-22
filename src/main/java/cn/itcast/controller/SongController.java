@@ -28,23 +28,8 @@ public class SongController {
     }
 
     @RequestMapping("/saveSong.do")
-    public @ResponseBody void saveSong(@RequestParam(value = "name",required = true) String name,
-                                       @RequestParam(value = "info",required = true)String info,
-                                       @RequestParam(value = "author",required = true)String author,
-                                       @RequestParam(value = "updateTime",required = true)String updateTime,
-                                       @RequestParam(value = "status",required = true)Integer status) throws ParseException {
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date time = sdf.parse(updateTime);
-        Song song = new Song();
-        song.setName(name);
-        song.setInfo(info);
-        song.setAuthor(author);
-        song.setUpdateTime(time);
-        song.setStatus(status);
-
+    public @ResponseBody void saveSong(Song song){
         songService.saveSong(song);
-
     }
 
     @RequestMapping("/delASong.do")
@@ -60,23 +45,7 @@ public class SongController {
 
 
     @RequestMapping("/editSong.do")
-    public @ResponseBody void editSong(@RequestParam(value = "id",required = true) Integer id,
-                                       @RequestParam(value = "name",required = true) String name,
-                                       @RequestParam(value = "info",required = true)String info,
-                                       @RequestParam(value = "author",required = true)String author,
-                                       @RequestParam(value = "updateTime",required = true)String updateTime,
-                                       @RequestParam(value = "status",required = true)Integer status) throws ParseException {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date time = sdf.parse(updateTime);
-        Song song = new Song();
-        song.setId(id);
-        song.setName(name);
-        song.setInfo(info);
-        song.setAuthor(author);
-        song.setUpdateTime(time);
-        song.setStatus(status);
-
-
+    public @ResponseBody void editSong(Song song) throws ParseException {
         songService.editSong(song);
     }
 
@@ -90,8 +59,5 @@ public class SongController {
     public @ResponseBody Song findSongById(@RequestParam(value="id") Integer id){
         return songService.findSongById(id);
     }
-
-
-
 
 }

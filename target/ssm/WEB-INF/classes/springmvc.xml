@@ -34,21 +34,6 @@
     <!--    开始springmvc注解支持-->
     <mvc:annotation-driven/>
 
-<!--&lt;!&ndash;    配置拦截器&ndash;&gt;-->
-<!--    <mvc:interceptors>-->
-<!--        <mvc:interceptor>-->
-<!--&lt;!&ndash;            你要拦截的具体方法&ndash;&gt;-->
-<!--            <mvc:mapping path="/List/*"/>-->
-<!--&lt;!&ndash;            你不拦截的方法&ndash;&gt;-->
-<!--&lt;!&ndash;            <mvc:exclude-mapping path=""/>&ndash;&gt;-->
-
-<!--&lt;!&ndash;            配置拦截器对象&ndash;&gt;-->
-<!--            <bean class="cn.itcast.interceptor.MyInterceptor"/>-->
-<!--        </mvc:interceptor>-->
-<!--    </mvc:interceptors>-->
-
-
-
     <!--json格式数据转换的配置  -->
     <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
         <property name="supportedMediaTypes">
@@ -58,7 +43,7 @@
         </property>
     </bean>
 
-
+<!--jwt请求拦截器-->
     <mvc:interceptors>
         <mvc:interceptor>
             <!-- 匹配的是url路径， 如果不配置或/**,将拦截所有的Controller -->

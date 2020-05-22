@@ -34,25 +34,13 @@ public class DeviceController {
         deviceService.delDevice(id);
     }
 
-
-
     @RequestMapping("/findDeviceByName.do")
     public @ResponseBody List<Device> findDeviceByName(String searchText){
         return deviceService.findDeviceByName(searchText);
     }
 
     @RequestMapping("/addDevice.do")
-    public @ResponseBody void addDevice(@RequestParam(value = "addId",required = true) String addId,
-                                       @RequestParam(value = "addName",required = true)String addName,
-                                       @RequestParam(value = "addType",required = true)Integer addType,
-                                       @RequestParam(value = "addStatus",required = true)Integer addStatus){
-
-        Device device = new Device();
-        device.setId(addId);
-        device.setName(addName);
-        device.setType(addType);
-        device.setStatus(addStatus);
-
+    public @ResponseBody void addDevice(Device device){
         deviceService.addDevice(device);
     }
 
@@ -63,17 +51,7 @@ public class DeviceController {
 
 
     @RequestMapping("/editDevice.do")
-    public @ResponseBody void editDevice(@RequestParam(value = "addId",required = true) String addId,
-                                        @RequestParam(value = "addName",required = true)String addName,
-                                        @RequestParam(value = "addType",required = true)Integer addType,
-                                        @RequestParam(value = "addStatus",required = true)Integer addStatus){
-
-        Device device = new Device();
-        device.setId(addId);
-        device.setName(addName);
-        device.setType(addType);
-        device.setStatus(addStatus);
-
+    public @ResponseBody void editDevice(Device device){
         deviceService.editDevice(device);
     }
 
@@ -105,7 +83,7 @@ public class DeviceController {
 
     @RequestMapping("/cancelSongList.do")
     public @ResponseBody void cancelSongList(@RequestParam(value = "songListId",required = true) Integer songListId,
-                                          @RequestParam(value = "deviceId",required = true)String deviceId){
+                                             @RequestParam(value = "deviceId",required = true)String deviceId){
         deviceService.cancelSongList(songListId,deviceId);
     }
 }
