@@ -22,18 +22,22 @@ public class AdvertisementController {
     @Autowired
     private IAdvertisementService advertisementService;
 
+
     @RequestMapping("/findAll.do")
     public @ResponseBody List<Advertisement> findAll(){
         return advertisementService.findAll();
     }
 
 
-
+    /**
+     * 使用模糊查询查找广告
+     * @param searchText 查询关键词
+     * @return
+     */
     @RequestMapping("/findAdvertisementByName.do")
     public @ResponseBody List<Advertisement> findAdvertisementByName(String searchText){
         return advertisementService.findAdvertisementByName(searchText);
     }
-
 
 
     @RequestMapping("/addAdvertisement.do")
@@ -51,7 +55,11 @@ public class AdvertisementController {
     }
 
 
-
+    /**
+     * 查找这个广告未关联的设备
+     * @param id 广告id
+     * @return
+     */
     @RequestMapping("/findDeviceNotIn.do")
     public @ResponseBody List<Device> findDeviceNotIn(Integer id){
        return advertisementService.findDeviceNotIn(id);
@@ -83,6 +91,11 @@ public class AdvertisementController {
         advertisementService.editAdvertisement(advertisement);
     }
 
+    /**
+     * 查找这个广告已关联的设备
+     * @param id 广告id
+     * @return
+     */
     @RequestMapping("/findDeviceInById.do")
     public @ResponseBody List<Device> findDeviceInById(Integer id){
         return advertisementService.findDeviceInById(id);

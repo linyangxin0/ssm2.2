@@ -17,6 +17,10 @@ public class SysController {
     @Autowired
     private ISysLogService iSysLogService;
 
+    /**
+     * 查询所有后台访问日志
+     * @return
+     */
     @RequestMapping("/findAll.do")
     public @ResponseBody List<SysLog> findAll(){
         return iSysLogService.findAll();

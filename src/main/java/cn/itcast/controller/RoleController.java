@@ -24,11 +24,21 @@ public class RoleController {
         return roleService.findAll();
     }
 
+    /**
+     * 查找当前角色下的用户
+     * @param id
+     * @return
+     */
     @RequestMapping("/findUserByRoleId.do")
     public @ResponseBody List<User> findUserByRoleId(Integer id){
         return roleService.findUserByRoleId(id);
     }
 
+    /**
+     * 取消用户角色关联
+     * @param userId
+     * @param roleId
+     */
     @RequestMapping("/delUserFromRole.do")
     public @ResponseBody void delUserFromRole(Integer userId,Integer roleId){
         roleService.delUserFromRole(userId,roleId);

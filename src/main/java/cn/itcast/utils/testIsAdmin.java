@@ -7,6 +7,11 @@ import java.util.List;
 
 public class testIsAdmin {
 
+    /**
+     * 检查该user是否ADMIN角色用户
+     * @param user
+     * @return
+     */
     public static Boolean isAdmin(User user){
         String str = "ADMIN";
         List<Role> roles = user.getRoleList();

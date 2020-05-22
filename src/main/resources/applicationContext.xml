@@ -51,6 +51,7 @@
             <tx:method name="*" isolation="DEFAULT"/>
         </tx:attributes>
     </tx:advice>
+
 <!--    配置AOP增强-->
     <aop:config>
         <aop:advisor advice-ref="txAdvice" pointcut="execution(* cn.itcast.service.impl.*ServiceImpl.*(..))"/>

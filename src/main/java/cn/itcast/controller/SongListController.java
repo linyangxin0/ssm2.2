@@ -24,6 +24,11 @@ public class SongListController {
         return songListService.findAll();
     }
 
+    /**
+     * 查找当前歌单所包含的歌曲
+     * @param id
+     * @return
+     */
     @RequestMapping("/findSongListsSong.do")
     public @ResponseBody List<Song> findSongListsSong(@RequestParam(value = "id",required = true) Integer id){
         return songListService.findSongListsSong(id);
@@ -41,6 +46,11 @@ public class SongListController {
     }
 
 
+    /**
+     * 查找当前歌单的不包含的歌曲
+     * @param id
+     * @return
+     */
     @RequestMapping("/findSongNotIn.do")
     public @ResponseBody List<Song> findSongNotIn(@RequestParam(value = "id",required = true) Integer id){
         return songListService.findSongNotIn(id);

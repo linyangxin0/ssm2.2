@@ -35,11 +35,6 @@ public class DeviceController {
     }
 
 
-//    @RequestMapping("/editDevice.do")
-//    public @ResponseBody void editDevice(Device device){
-//        deviceService.editDevice(device);
-//    }
-
 
     @RequestMapping("/findDeviceByName.do")
     public @ResponseBody List<Device> findDeviceByName(String searchText){
@@ -82,7 +77,11 @@ public class DeviceController {
         deviceService.editDevice(device);
     }
 
-
+    /**
+     * 查找当前设备未关联的歌单
+     * @param deviceId
+     * @return
+     */
     @RequestMapping("/findSongListNotIn.do")
     public @ResponseBody List<SongList> findSongListNotIn(String deviceId){
         return deviceService.findSongListNotIn(deviceId);
@@ -94,6 +93,11 @@ public class DeviceController {
         deviceService.addSongList(songListId,deviceId);
     }
 
+    /**
+     * 查找当前设备关联的歌单
+     * @param deviceId
+     * @return
+     */
     @RequestMapping("/findSongListIn.do")
     public @ResponseBody List<SongList> findSongListIn(String deviceId){
         return deviceService.findSongListIn(deviceId);

@@ -12,9 +12,9 @@ import java.io.PrintWriter;
 
 public class TokenInterceptor implements HandlerInterceptor {
 
-    public void afterCompletion(HttpServletRequest request,
-                                HttpServletResponse response, Object handler, Exception arg3)
-            throws Exception {
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response,
+                                Object handler, Exception arg3) throws Exception {
+
     }
 
     public void postHandle(HttpServletRequest request, HttpServletResponse response,

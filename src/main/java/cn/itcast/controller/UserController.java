@@ -32,10 +32,8 @@ public class UserController {
 
     @RequestMapping("/addUser.do")
     public @ResponseBody void addUser(@RequestParam(value="name") String name,
-                                           @RequestParam(value="status") Integer status){
-
+                                      @RequestParam(value="status") Integer status){
         User user = new User();
-
         user.setName(name);
         user.setStatus(status);
         user.setPassword("123");
@@ -77,17 +75,15 @@ public class UserController {
 
 
     @RequestMapping("/login.do")
-    public @ResponseBody
-    ResponseData login(@RequestParam(value="username") String username,
-                       @RequestParam(value="password") String password){
+    public @ResponseBody ResponseData login(@RequestParam(value="username") String username,
+                                            @RequestParam(value="password") String password){
 
         ResponseData responseData = ResponseData.ok();
         User user = userService.login(username,password);
-
+        //检查当前登录的用户的角色是否ADMIN
         Boolean isAdmin = testIsAdmin.isAdmin(user);
 
         if(user != null){
-
             String token = JwtUtils2.sign((long) user.getId());
             //封装成对象返回给客户端
             responseData.putDataValue("userId", user.getId());
@@ -95,6 +91,7 @@ public class UserController {
             responseData.putDataValue("user", user);
             responseData.putDataValue("isAdmin", isAdmin);
         } else{
+            //查询失败返回错误状态码
             responseData =  ResponseData.customerError();
         }
 
