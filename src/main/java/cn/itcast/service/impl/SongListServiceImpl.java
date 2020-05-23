@@ -58,5 +58,10 @@ public class SongListServiceImpl implements ISongListService {
         songListDao.addSongList(name);
     }
 
+    @Override
+    public void editSongList(Integer id, String name) {
+        songListDao.editSongList(id,name);
+    }
+
 
 }

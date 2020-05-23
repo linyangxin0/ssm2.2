@@ -32,4 +32,7 @@ public interface SongListDao {
 
     @Insert("insert into songlist (name) values (#{name})")
     void addSongList(String name);
+
+    @Update("update songlist set name=#{name} where id=#{id}")
+    void editSongList(@Param("id")Integer id,@Param("name") String name);
 }

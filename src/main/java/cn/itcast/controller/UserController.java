@@ -74,6 +74,14 @@ public class UserController {
     }
 
 
+
+    @RequestMapping("/updatePassword.do")
+    public @ResponseBody void updatePassword(Integer id,String newPassword){
+        userService.updatePassword(id,newPassword);
+    }
+
+
+
     @RequestMapping("/login.do")
     public @ResponseBody ResponseData login(@RequestParam(value="username") String username,
                                             @RequestParam(value="password") String password){

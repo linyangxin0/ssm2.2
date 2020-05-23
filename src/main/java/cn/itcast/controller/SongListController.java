@@ -75,6 +75,10 @@ public class SongListController {
     }
 
 
+    @RequestMapping("/editSongList.do")
+    public @ResponseBody void editSongList(Integer id,String name){
+        songListService.editSongList(id,name);
+    }
 
 
 }

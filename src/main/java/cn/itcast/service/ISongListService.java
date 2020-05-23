@@ -23,4 +23,6 @@ public interface ISongListService {
     List<Song> findSongListByName(String searchText);
 
     void addSongList(String name);
+
+    void editSongList(Integer id, String name);
 }
